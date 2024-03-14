@@ -5,9 +5,7 @@ import yellow3 from "./images/1.jpeg";
 import yellow4 from "./images/2.jpeg";
 import yellow5 from "./images/3.jpeg";
 import abi1 from "./images/abi1.jpeg";
-import abi2 from "./images/abi2.jpeg";
 import abi3 from "./images/abi3.jpeg";
-import abi4 from "./images/abi4.jpeg";
 import abi5 from "./images/abi5.jpeg";
 
 function Portfolio() {
