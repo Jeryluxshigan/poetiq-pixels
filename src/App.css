@@ -1,38 +1,325 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  --primary-color: #f7f7f7;
+  --secondary-color: #333333;
+  --sub-color: #ff6347;
+  --text-color: #00000000;
+  --body: rgb(235, 235, 235);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(235, 235, 235);
+}
+.video-background {
+  width: 100%;
+  height: 500px; /* Set the desired height */
+  object-fit: cover; /* Crop the video */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0; /* Adjust position if needed */
+  width: calc(100% - 80px); /* Subtract the padding (40px on each side) */
+  height: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  z-index: 1000;
+  padding: 10px 40px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--secondary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navlist {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  color: var(--secondary-color);
+}
+
+.navlist li {
+  cursor: pointer;
+  position: relative;
+}
+
+.navlist li:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--sub-color); /* Adjust the color of the underline */
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px; /* Adjust padding for smaller screens */
+    width: calc(100% - 20px); /* Subtract the padding (40px on each side) */
+    height: 25px;
   }
-  to {
-    transform: rotate(360deg);
+  .title {
+    font-size: 10px;
+    font-weight: 600;
   }
+  .navlist {
+    gap: 8px;
+  }
+  .navlist li {
+    margin-right: 5px; /* Adjust spacing between items */
+    font-size: 10px;
+  }
+  .video-background {
+    width: 100%;
+    height: 250px; /* Set the desired height */
+    object-fit: cover; /* Crop the video */
+  }
+}
+
+.section-card {
+  background-color: var(--body);
+  padding: 30px 40px;
+}
+.section-card1 {
+  background-color: var(--primary-color);
+  padding: 30px 40px;
+}
+.section-title {
+  color: var(--sub-color);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.sub-section {
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+}
+
+.img1 {
+  width: 100%;
+}
+.content {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+  text-align: justify;
+}
+
+.content-title {
+  color: var(--sub-color);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.devider {
+  display: flex;
+  gap: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    color: var(--sub-color);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .content {
+    font-size: 10px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-align: justify;
+  }
+  .content-title {
+    color: var(--sub-color);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .section-card {
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+  }
+  .section-card1 {
+    background-color: var(--primary-color);
+    padding: 15px 40px;
+  }
+}
+
+.portfolio-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+}
+.portfolio-image {
+  padding: 10px 0px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: 500px;
+}
+
+.img-fluid1 {
+  width: 100%;
+  height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-fluid {
+    width: 100%;
+    height: 120px;
+  }
+  .img-fluid1 {
+    width: 100%;
+    height: 100px;
+  }
+}
+.contact-section {
+  display: flex;
+}
+.contact-card {
+  padding: 20px;
+  background-color: var(--sub-color);
+  margin-top: 20px;
+}
+
+.contact {
+  list-style: none;
+  margin-left: -20px;
+}
+
+.contact-list {
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+svg {
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 25px;
+}
+.form-card {
+  padding: 20px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ffff;
+}
+
+.form-card-sec1 {
+  padding: 0px 60px;
+}
+.form-titles {
+  margin-bottom: 10px;
+}
+.titles {
+  margin-bottom: 5px;
+}
+
+.submit {
+  background-color: #ff6347;
+  color: #f7f7f7;
+  padding: 10px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.img-small {
+  width: 100px;
+  height: 100px;
+  margin-left: 60px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-card {
+    padding: 10px;
+    background-color: var(--sub-color);
+    margin-top: 20px;
+  }
+  .contact-list {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  span {
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+  .form-card {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ffff;
+  }
+  .submit {
+    background-color: #ff6347;
+    color: #f7f7f7;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .img-small {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    border: 1px solid black;
+  }
+  .titles {
+    font-size: 8px;
+  }
+  .form-card-sec1 {
+    padding: 0px 10px;
+  }
+  .contact {
+    list-style: none;
+    margin-left: -40px;
+  }
+  
+}
+
+footer{
+  background-color: var(--sub-color);
+  width: 100%;
+  padding: 10px 40px;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 14px;
 }
